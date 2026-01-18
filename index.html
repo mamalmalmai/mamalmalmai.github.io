@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOUR NAME</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.6;
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+        }
+
+        .time-section {
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .time-section a {
+            color: #0000EE;
+            text-decoration: underline;
+        }
+
+        .time-section a:visited {
+            color: #551A8B;
+        }
+
+        #time {
+            font-weight: bold;
+        }
+
+        nav {
+            margin-bottom: 40px;
+            font-size: 14px;
+        }
+
+        nav a {
+            color: #0000EE;
+            text-decoration: underline;
+            margin: 0 5px;
+        }
+
+        nav a:visited {
+            color: #551A8B;
+        }
+
+        nav a:hover {
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        .content {
+            margin-top: 40px;
+        }
+
+        .content section {
+            margin-bottom: 40px;
+        }
+
+        .content h2 {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-transform: lowercase;
+        }
+
+        .content p, .content ul {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .content ul {
+            list-style-position: inside;
+        }
+
+        .content a {
+            color: #0000EE;
+            text-decoration: underline;
+        }
+
+        .content a:visited {
+            color: #551A8B;
+        }
+
+        .content a:hover {
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        i {
+            font-style: italic;
+        }
+
+        br {
+            line-height: 2;
+        }
+
+        footer {
+            margin-top: 60px;
+            font-size: 12px;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 15px;
+            }
+            
+            h1 {
+                font-size: 20px;
+            }
+            
+            nav {
+                line-height: 2;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>YOUR NAME</h1>
+    
+    <div class="time-section">
+        <a href="https://time.is/" target="_blank">CURRENT TIME</a> - <span id="time"></span>
+    </div>
+    
+    <nav>
+        <a href="#about">about</a> //
+        <a href="#projects">projects</a> //
+        <a href="#contact">contact</a> //
+        <a href="#blog">blog</a>
+    </nav>
+
+    <div class="content">
+        <section id="about">
+            <h2>about</h2>
+            <p>
+                welcome to my corner of the internet. <br><br>
+                I'm a [your profession/role] based in [your location]. 
+                I'm interested in [your interests]. <br><br>
+                currently working on [current project/focus].
+            </p>
+        </section>
+
+        <section id="projects">
+            <h2>projects</h2>
+            <p>
+                <b>project one</b><br>
+                description of your first project. <a href="#">link</a><br><br>
+                
+                <b>project two</b><br>
+                description of your second project. <a href="#">link</a><br><br>
+                
+                <b>project three</b><br>
+                description of your third project. <a href="#">link</a>
+            </p>
+        </section>
+
+        <section id="contact">
+            <h2>contact</h2>
+            <p>
+                email—<a href="mailto:your@email.com"><i>your@email.com</i></a><br>
+                twitter—<a href="https://twitter.com/yourusername" target="_blank"><i>@yourusername</i></a><br>
+                github—<a href="https://github.com/yourusername" target="_blank"><i>github.com/yourusername</i></a><br>
+                linkedin—<a href="https://linkedin.com/in/yourusername" target="_blank"><i>linkedin.com/in/yourusername</i></a>
+            </p>
+        </section>
+
+        <section id="blog">
+            <h2>recent thoughts</h2>
+            <p>
+                <i>2026-01-15</i> - <a href="#">your blog post title</a><br>
+                <i>2026-01-10</i> - <a href="#">another blog post</a><br>
+                <i>2026-01-05</i> - <a href="#">yet another post</a>
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        © 2026 YOUR NAME // built with html & css // hosted on github pages
+    </footer>
+
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('en-US', { 
+                hour: 'numeric', 
+                minute: '2-digit',
+                hour12: true 
+            });
+            const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            document.getElementById('time').textContent = timeString;
+        }
+        
+        updateTime();
+        setInterval(updateTime, 1000);
+    </script>
+</body>
+</html>
